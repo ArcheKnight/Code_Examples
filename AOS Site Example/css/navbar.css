@@ -1,0 +1,147 @@
+#nav-container {
+	font-family: 'Bogle Bold';
+	position: relative;
+	box-sizing: border-box;
+	z-index: 1;
+	height: 60px;
+	background-color: rgb(0, 113, 206);
+	border-bottom: 3px solid rgb(255, 194, 32);
+	font-size: 1.2rem;
+	color: white;
+}
+
+#home {
+	cursor: pointer;
+}
+
+.nav-menu {
+	height: 100%;
+	display: flex;
+	margin-left: auto;
+}
+
+.nav-link {
+	display: flex;
+	height: 100%;
+	line-height: 130%;
+	position: relative;
+	background: rgba(0, 0, 0, 0);
+	padding: 0 10px;
+	cursor: pointer;
+}
+
+.nav-link:hover {
+	background: rgba(4, 30, 66, 1);
+}
+
+.nav-btn {
+	align-self: center;
+	margin-top: auto;
+	margin-bottom: auto;
+	font-size: 1.1rem;
+	position: relative;
+}
+
+.drop-icon {
+	width: .6em;
+	height: .6em;
+	align-self: center;
+	margin-left: 7px;
+	transition: .2s ease-in;
+}
+
+.external-link::after {
+	content: "";
+	background: url("../imgs/external.png") no-repeat;
+	background-position: center;
+	background-size: cover;
+	filter: saturate(25%);
+	width: 1em;
+	height: 1em;
+	margin-left: 7px;
+}
+
+.external-link:hover::after {
+	filter: saturate(150%);
+}
+
+.drop-nav-menu {
+	display: inline-flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top: 95%;
+	left: 0;
+	border-radius: 2px 7px 7px 7px;
+	overflow: hidden;
+	min-width: 100%;
+	z-index: -1;
+	visibility: hidden;
+	transform: translateY(-2em);
+	transform: scaleY(0);
+	background: rgba(4, 30, 66, 1);
+	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+	transition: z-index 0s linear 0s, transform 0.2s ease-in 0s, visibility 0s linear 0s;
+
+}
+
+.nav-link:hover .drop-nav-menu,
+.drop-nav-menu:hover {
+	z-index: 1;
+	visibility: visible;
+	transform: scaleY(1);
+	transform: translateY(0%);
+	animation: shake 0.2s ease-in .1s;
+}
+
+.nav-link:hover .drop-icon,
+.drop-nav-menu:hover .drop-icon {
+	transform: rotate(90deg);
+}
+
+.drop-nav-btn {
+	display: flex;
+	box-sizing: border-box;
+	align-items: center;
+	justify-content: center;
+	min-width: 100%;
+	padding: 10px 15px;
+	cursor: pointer;
+	background: rgba(4, 30, 66, 1);
+}
+
+.drop-nav-btn:hover {
+	background: rgba(0, 113, 206, 1);
+}
+
+.drop-nav-text {
+	line-height: 120%;
+	text-align: center;
+	white-space: nowrap;
+}
+
+#logo {
+	border-radius: 100px;
+	width: 3rem;
+	height: 3rem;
+	margin-left: 15px;
+}
+
+@keyframes shake {
+	25% {
+		transform: translateY(6px);
+	}
+
+	75% {
+		transform: translateY(-4px);
+	}
+
+	0% {
+		transform: translateY(0);
+	}
+
+	100% {
+		transform: translateY(0);
+		z-index: 1;
+	}

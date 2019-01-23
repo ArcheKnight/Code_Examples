@@ -1,0 +1,175 @@
+#window {
+	display: grid;
+	grid-template-columns: [first] 1fr [second] 4fr;
+	height: 60vh;
+}
+
+.navigation-window {
+	grid-column-start: first;
+	grid-column-end: second;
+	box-sizing: border-box;
+	height: 100%;
+	/*background-color: rgb(4, 30, 66);*/
+	background-color: rgb(0, 113, 206);
+}
+
+.navigation-button {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	box-sizing: border-box;
+	width: 100%;
+	height: 3em;
+	cursor: pointer;
+	padding-right: 6%;
+	color: white;
+	background-image: linear-gradient(#F1F1F1, #F1F1F1);
+	background-repeat: no-repeat;
+	background-size: 0;
+	transition: color 0s linear, background-size .2s ease-in;
+}
+
+.navigation-button.active {
+	color: black;
+	background-size: 100%;
+}
+
+.navigation-button:not(.active):hover {
+	color: black;
+	background-size: 95%;
+}
+
+.navigation-text {
+	font-size: 1.1rem;
+}
+
+.program-window {
+	position: relative;
+	grid-column-start: second;
+	box-sizing: border-box;
+	height: 100%;
+	padding: 15px;
+}
+
+.work {
+	display: grid;
+	grid-template-rows: [first] 2fr [second] 2fr [third] 3fr [fourth] 2fr;
+	grid-template-columns: [first] 1fr [second main] 18fr [third] 1fr;
+	position: absolute;
+	top: 0;
+	left: 0;
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	transform: scaleX(0);
+	transform-origin: center left;
+	transition: transform .1s ease-out 0s;
+}
+
+.work-show {
+	text-align: center;
+	transform: scaleX(1);
+	/*transition: transform .1s ease-in 0.1s; This adds a short delay before the transition to make the old bounce away before the new bounces in*/
+}
+
+.col {
+	grid-column-start: second;
+	grid-column-end: third;
+}
+
+.header {
+	text-align: center;
+	grid-row-start: first;
+	grid-row-end: second;
+}
+
+.body {
+	grid-row-start: second;
+	grid-row-end: third;
+	font-size: 1.1rem;
+}
+
+.text {
+	grid-row-start: third;
+	grid-row-end: fourth;
+	z-index: 1;
+}
+
+.text textarea {
+	width: 100%;
+	height: 100%;
+	font-size: 1.1rem;
+	box-sizing: border-box;
+	border-radius: 5px;
+	border: 1px solid rgb(4, 30, 66);
+	resize: none;
+}
+
+.buttons {
+	grid-row-start: fourth;
+	margin-top: 10px;
+}
+
+.btn-container {
+	display: inline-flex;
+	justify-content: flex-end;
+	align-items: center;
+	width: 100%;
+}
+
+.btn-container * {
+	margin-left: 5px;
+}
+
+.btn {
+	height: 25px;
+	border-radius: 5px;
+	border: 1px solid rgb(4, 30, 66);
+	cursor: pointer;
+}
+
+.copyBtn {
+	background-color: rgba(0, 113, 206, .6);
+	color: white;
+}
+
+.copyBtn:hover {
+	background-color: rgba(0, 113, 206, 1);
+}
+
+.clearBtn {
+	background-color: rgba(255, 194, 32, .6);
+	color: black;
+}
+
+.clearBtn:hover {
+	background-color: rgba(255, 194, 32, 1)
+}
+
+.copy-text {
+	box-sizing: border-box;
+	background-color: rgba(0, 0, 0, 0.05);
+}
+
+.extra-button {
+	margin-right: auto;
+	margin-left: 0;
+	color: white;
+	background-color: rgba(4, 30, 66, .6);
+}
+
+.extra-button:hover {
+	background-color: rgba(4, 30, 66, 1);
+}
+
+#responseSelect {
+	border-radius: 5px;
+	height: 25px;
+	border: 1px solid black;
+	cursor: pointer;
+}
+
+#responseCopyText {
+	background-color: rgba(0, 0, 0, 0.05);
+	box-sizing: border-box;
+}
