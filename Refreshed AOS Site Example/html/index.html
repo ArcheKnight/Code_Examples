@@ -1,0 +1,131 @@
+<!doctype html>
+<title>AOS Support Site</title>
+<link rel="stylesheet" href="../css/default.css">
+<link rel="shortcut icon" href="../resources/imgs/spark.png" />
+
+<body>
+  <nav class="top-nav" id="top-nav">    
+    <div class="top-nav--container">
+      <a class="top-nav__link" data-relation="issue-tracker">Issue Tracker</a>
+      <a class="top-nav__link" data-relation="ams">AMS</a>
+      <a class="top-nav__link" data-relation="quickbase">QuickBase</a>
+      <a class="top-nav__link" data-relation="associate-info">Associate Info</a>
+      <a class="top-nav__link" data-relation="resources">Resources</a>
+      <a class="top-nav__link" data-relation="links">Links</a>
+      
+      <div class="drop-menu" data-relation="issue-tracker">
+        <a class="drop-menu__link">Open Tickets</a>
+        <a class="drop-menu__link">Daily Production</a>
+        <a class="drop-menu__link">Weekly Production</a>
+        <a class="drop-menu__link">Weekly Submitted Count</a>
+        <a class="drop-menu__link">All Resolved Report</a>
+      </div>
+      
+      <div class="drop-menu" data-relation="ams">
+        <a class="drop-menu__link">Dashboard</a>
+        <a class="drop-menu__link">Field Dashboard</a>
+        <a class="drop-menu__link">TBS Report</a>
+        <a class="drop-menu__link">Pending Action Report</a>
+        <a class="drop-menu__link">Promotion/Demotion Action Report</a>
+        <a class="drop-menu__link">User Access</a>
+      </div>
+      
+      <div class="drop-menu" data-relation="quickbase">
+        <a class="drop-menu__link">Associate Classes</a>
+        <a class="drop-menu__link">Roster Report</a>
+        <a class="drop-menu__link">Expense Card Inventory</a>
+        <a class="drop-menu__link drop-menu__link--multi">Fix WIN Pages</a>
+        <a class="drop-menu__link drop-menu__link--multi">Fix Access Pages</a>
+      </div>
+      
+      <div class="drop-menu" data-relation="associate-info">
+        <a class="drop-menu__link">Career Preference</a>
+        <a class="drop-menu__link">Tableau</a>
+        <a class="drop-menu__link">Expense App</a>
+        <a class="drop-menu__link">EDU</a>
+      </div>
+      
+      <div class="drop-menu" data-relation="resources">
+        <a class="drop-menu__link">Reference Information</a>
+        <a class="drop-menu__link">QB Navigation SOP</a>
+        <a class="drop-menu__link">AMS Access SOP</a>
+        <a class="drop-menu__link">Sharepoint</a>
+      </div>
+      
+      <div class="drop-menu" data-relation="links">
+        <a class="drop-menu__link">ETM</a>
+        <a class="drop-menu__link">GTA</a>
+        <a class="drop-menu__link">Aspect</a>
+        <a class="drop-menu__link">The WIRE</a>
+        <a class="drop-menu__link">Axonify</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="card page-header">
+    <h1>Academy Operations Support</h1>
+  </section>
+  
+  <section class="card main" id="main-content">
+    <section class="main__menu" id="main-content-menu">
+      <div class="main__menu--button" data-relation="concatenate-wins">Concatenate WINs</div>
+      <div class="main__menu--button" data-relation="concatenate-tickets">Concatenate Tickets</div>
+      <div class="main__menu--button" data-relation="copy-response">Copy Response</div>
+    </section>
+    
+    <section class="main__content">
+      <div class="content" data-relation="concatenate-wins">
+        <div class="content__header">Concatenate WINs</div>
+        <div class="content__description">Enter all of the WINs into the textbox below and click the "Run" button to copy a usable string.</div>
+        <textarea class="content__input--textarea"></textarea>
+        
+        <div class="content__menu">
+          <div class="content__menu--left">
+            <button class="content__input--button extra-button">Associate Classes</button>
+            <button class="content__input--button extra-button">Roster Report</button>
+            <button class="content__input--button extra-button">Search AMS</button>
+          </div>
+          <div class="content__menu--right">
+            <input type="text" class="content__input--text" readonly></input>
+            <button class="content__input--button run-button">Run</button>
+            <button class="content__input--button clear-button">Clear</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="content" data-relation="concatenate-tickets">
+        <div class="content__header">Concatenate Tickets</div>
+        <div class="content__description">Enter all of the WINs into the textbox below and click the "Run" button to copy a usable string.</div>
+        <textarea class="content__input--textarea"></textarea>
+        
+        <div class="content__menu">
+          <div class="content__menu--right">
+            <input type="text" class="content__input--text" readonly></input>
+            <button class="content__input--button run-button">Run</button>
+            <button class="content__input--button clear-button">Clear</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="content" data-relation="copy-response">
+        <div class="content__header">Copy Response</div>
+        <div class="content__description">Select a response option below and click the "Run" button to copy the text.</div>
+        <textarea class="content__input--textarea" id="CRBox" readonly></textarea>
+        
+        <div class="content__menu">
+          <div class="content__menu--right">
+            <select class="content__input--text" id="CRSelect"></select>
+            <button class="content__input--button run-button">Run</button>
+            <button class="content__input--button clear-button">Clear</button>
+          </div>
+        </div>
+      </div>
+      
+    </section>
+  </section>
+</body>
+
+<script src="../js/links.js"></script>
+<script src="../responses.js"></script>
+<!--<script src="../js/default.js"></script>-->
+<script src="../js/index.js"></script>

@@ -1,0 +1,272 @@
+/* ~~~~~~~~~~ VARIABLES ~~~~~~~~~~ */
+
+:root {
+  /* COLORS */
+  --Background-Color: #F3F3F3;
+  --WM-Dark-Blue: rgb(4, 30, 66);
+  --WM-Light-Blue: rgb(0, 113, 206);
+  --WM-Clear-Light-Blue: rgba(0, 113, 206, 0.2);
+  --WM-Yellow: rgb(255, 194, 32);
+  
+  /* NAV VARIABLES */
+  --Navbar-Height: 70px;
+  --Nav-Font-Size-Ratio: 1/3;
+  --Nav-Border-Width: 3px;
+  
+  /* GLOBAL VARIABLES */
+  --Card-Width: 70%;
+}
+
+/* ~~~~~~~~~~ ELEMENTS ~~~~~~~~~~ */
+
+input:focus, textarea:focus, select:focus, button:focus {
+  outline: none;
+  box-shadow:
+    1px 1px 5px var(--WM-Clear-Light-Blue),
+    1px -1px 5px var(--WM-Clear-Light-Blue),
+    -1px 1px 5px var(--WM-Clear-Light-Blue),
+    -1px -1px 5px var(--WM-Clear-Light-Blue);
+  border: 1px solid var(--WM-Light-Blue);
+}
+
+body {
+  background-color: var(--Background-Color);
+  font-family: "Bogle Regular";
+  color: var(--WM-Dark-Blue);
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+input, textarea, button, select {
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid var(--WM-Dark-Blue);
+  font-family: "Bogle Bold";
+  transition: .2s ease-in;
+}
+
+input, button, select {
+  font-size: 1rem;
+}
+
+button, select {
+  cursor: pointer;
+}
+
+/* ~~~~~~~~~~ NAVIGATION BAR ~~~~~~~~~~ */
+
+[class^="top-nav__"] {
+  color: var(--WM-Light-Blue);
+}
+
+.top-nav {
+  display: flex;
+  justify-content: center;
+  font-family: "Bogle Bold";
+  font-size: calc((var(--Nav-Font-Size-Ratio)) * var(--Navbar-Height));
+  height: var(--Navbar-Height);
+}
+
+.top-nav--container {
+  display: flex;
+  height: var(--Navbar-Height);
+}
+
+.top-nav__link {
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+  cursor: pointer;
+  height: 100%;
+  border-left: var(--Nav-Border-Width) solid rgba(0,0,0,0);
+  background-image: linear-gradient(var(--WM-Dark-Blue), var(--WM-Dark-Blue));
+  background-size: 100% 0;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+.drop-menu {
+  max-height: 0px;
+  overflow: hidden;
+  position: absolute;
+  justify-content: center;
+  top: var(--Navbar-Height);
+  z-index: 2;
+  border-left: var(--Nav-Border-Width) solid var(--WM-Yellow);
+  background-color: var(--WM-Dark-Blue);
+  -webkit-transform:perspective(400) rotate3d(1,0,0,-90deg);
+  -webkit-transform-origin:50% 0;
+}
+
+.drop-menu__link {
+  display: block;
+  color: white;
+  padding: 10px 20px;
+  border-top: 1px solid rgba(0,0,0,0);
+  border-bottom: 1px solid rgba(0,0,0,0);
+  transition: 0 ease-out;
+  cursor: pointer;
+}
+
+.drop-menu__link:hover {
+  background-color: var(--WM-Light-Blue);
+  transition: .1s ease-in;
+}
+
+/* ~~~~~~~~~~ GENERIC ~~~~~~~~~~ */
+
+.card {
+  display: flex;
+  width: var(--Card-Width);
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0 5px var(--WM-Dark-Blue);
+  border: 1px solid var(--WM-Dark-Blue);
+}
+
+.card:not(:first-of-type) {
+  margin-top: 35px;
+}
+
+/* ~~~~~~~~~~ PAGE HEADER ~~~~~~~~~~ */
+
+.page-header {
+  justify-content: center;
+}
+
+.page-header h1 {
+    font-face: "Bogle Black";
+    font-size: 4rem;
+    margin: 15px 0;
+    position: relative;
+}
+
+/* ~~~~~~~~~~ MAIN MENU ~~~~~~~~~~ */
+
+.main__menu {
+  text-align: right;
+  width: 23%;
+  background-color: var(--WM-Light-Blue);
+}
+
+.main__menu--button {
+  padding: 10px 20px 10px 50px;
+  cursor: pointer;
+  color: white;
+  font-size: 1.2rem;
+  font-family: "Bogle Bold";
+  background-image: linear-gradient(var(--Background-Color), var(--Background-Color)), linear-gradient(var(--WM-Light-Blue), var(--WM-Light-Blue));
+  background-repeat: no-repeat;
+  background-size: 0% 100%, 100% 100%;
+  transition: background-size .2s ease-out, color 0s 0s, border .1s linear .1s;
+}
+
+/* ~~~~~~~~~~ MAIN CONTENT ~~~~~~~~~~ */
+
+.main__content {
+  width: 77%;
+  padding: 25px 0;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.content {
+  display: none;
+}
+
+.content__description, .content__input--textarea, .content__menu {
+  margin-top: 15px;
+}
+
+.content__header {
+  font-family: "Bogle Black";
+  font-size: 2.5rem;
+  text-align: center;
+  color: var(--WM-Dark-Blue);
+}
+
+.content__description {
+  font-family: "Bogle Regular";
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.content__input--textarea {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 77%;
+  height: 150px;
+}
+
+.content__menu {
+  display: inline-flex;
+  margin-left: auto;
+  margin-right: auto;
+  width: 77%;
+}
+
+.content__menu--left {
+  margin-left: 0;
+}
+
+.content__menu--right {
+  margin-left: auto;
+}
+
+.run-button {
+  color: #FFFFFF;
+  border:1px solid black;
+  text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
+  background-color: #4ba614;
+}
+
+.run-button:hover {
+  border:1px solid white;
+}
+
+.clear-button {
+  color: #FFFFFF;
+  border:1px solid black;
+  text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
+  background-color: var(--WM-Yellow);
+}
+
+.clear-button:hover {
+  border:1px solid white;
+}
+
+.extra-button {
+  color: #FFFFFF;
+  border:1px solid black;
+  text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
+  background-color: var(--WM-Light-Blue);
+}
+
+.extra-button:hover {
+  border:1px solid white;
+}
+
+/* ~~~~~~~~~ FONTS ~~~~~~~~~ */
+
+@font-face {
+	font-family: 'Bogle Regular';
+	src: url('../resources/fonts/Bogle/BogleWeb-Regular.ttf'),
+		url('../resources/fonts/Bogle/BogleWeb-Regular.eot');
+}
+
+@font-face {
+	font-family: 'Bogle Black';
+	src: url('../resources/fonts/Bogle/BogleWeb-Black.ttf'),
+		url('../resources/fonts/Bogle/BogleWeb-Black.eot');
+}
+
+@font-face {
+	font-family: 'Bogle Bold';
+	src: url('../resources/fonts/Bogle/BogleWeb-Bold.ttf'),
+		url('../resources/fonts/Bogle/BogleWeb-Bold.eot');
+}
